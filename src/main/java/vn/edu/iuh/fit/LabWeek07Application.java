@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import vn.edu.iuh.fit.backend.enums.ProductStatus;
 import vn.edu.iuh.fit.backend.models.Product;
 import vn.edu.iuh.fit.backend.reponsitories.ProductRepository;
@@ -21,18 +22,18 @@ public class LabWeek07Application {
 
     @Autowired
     private ProductRepository productRepository;
-    //    @Bean
+    @Bean
     CommandLineRunner createSampleProducts(){
         return args -> {
             Faker faker =new Faker();
             Random rnd = new Random();
             Device devices = faker.device();
-            for (int i = 0; i < 200; i++) {
+            for (int i = 0; i < 100; i++) {
                 Product product =new Product(
                         devices.modelName(),
                         faker.lorem().paragraph(30),
-//                        rnd.nextInt(10)%2==0?"Kg":"piece",
-                        "piece",
+                        rnd.nextInt(10)%2==0?"Kg":"piece",
+//                        "piece",
                         devices.manufacturer(),
                         ProductStatus.ACTIVE
                 );
