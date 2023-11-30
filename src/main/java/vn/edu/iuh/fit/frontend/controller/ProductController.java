@@ -44,9 +44,9 @@ public class ProductController {
                     .collect(Collectors.toList());
             model.addAttribute("pageNumbers", pageNumbers);
         }
-        return "/admin/product/list";
+        return "/admin/product/listing";
     }
-    @GetMapping("/show-add-form")
+    @GetMapping("products/show-add-form")
     public String add(Model model){
         Product product = new Product();
         model.addAttribute("product", product);
@@ -58,13 +58,13 @@ public class ProductController {
             @ModelAttribute("product") Product product,
             BindingResult result, Model mode){
         productRepository.save(product);
-        return "redirect:/products";
+        return "redirect:/admin/products";
     }
 
     @GetMapping("/products/delete/{id}")
     public String addCandidate(@PathVariable("id") long id){
         Product product = productRepository.findById(id).orElse(new Product());
         productRepository.delete(product);
-        return "redirect:/products";
+        return "redirect:/admin/products";
     }
 }
