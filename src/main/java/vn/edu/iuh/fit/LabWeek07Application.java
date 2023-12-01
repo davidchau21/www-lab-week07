@@ -22,7 +22,7 @@ public class LabWeek07Application {
 
     @Autowired
     private ProductRepository productRepository;
-    @Bean
+//    @Bean
     CommandLineRunner createSampleProducts(){
         return args -> {
             Faker faker =new Faker();
