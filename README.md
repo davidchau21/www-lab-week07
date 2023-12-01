@@ -25,8 +25,14 @@ Trang chủ
     ![is](/img/insert.png)
 
   **View Cart**
-  Xem chi tiết sản phẩm
+  
+  Xem chi tiết đơn hàng
     ![v](/img/viewCart.png)
+  
+  **View Product**
+
+  Xem chi tiết sản phẩm
+  ![v](img/viewProduct.png)
 
 # BACK-END
 - CRUD các đối tượng.
